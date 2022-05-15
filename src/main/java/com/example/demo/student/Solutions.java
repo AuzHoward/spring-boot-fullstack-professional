@@ -122,6 +122,29 @@ public class Solutions {
         }
     }
 
+    public String longestCommonPrefix(String[] strs) {
+        String word1 = strs[0];
+        int length = word1.length();
+        int min = length;
 
 
+        for(int i = 1; i < strs.length; i++){
+            int count = 0;
+            String word2 = strs[i];
+            int smallerWord = Math.min(length, word2.length());
+
+            for(int j = 0; j < smallerWord; j++){
+                if(word1.charAt(j) == word2.charAt(j)){
+                    count++;
+                }else{
+                    break;
+                }
+            }
+            min = Math.min(min, count);
+            if(count == 0) {return "";}
+        }
+
+        String ans = word1.substring(0, min);
+        return ans;
+    }
 }

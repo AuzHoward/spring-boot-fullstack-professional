@@ -128,4 +128,17 @@ public class SolutionsTest {
         assertThat(actual).isEqualTo(expected);
     }
 
+    @Test
+    void canFindLowestCommonPrefix() {
+        //given
+        String[] arr = new String[]{"flower", "flow", "flight"};
+
+        //when
+        String actual = underTest.longestCommonPrefix(arr);
+        String expected = "fl";
+
+        //then
+        assertThat(actual).isEqualTo(expected);
+    }
+
 }
