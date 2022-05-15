@@ -14,4 +14,5 @@ public interface StudentRepository
             "WHERE s.email = ?1"
     )
     Boolean selectExistsEmail(String email);
+    //Boolean selectExistId(Long studentId);
 }

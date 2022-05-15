@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
+import java.util.Arrays;
 import java.util.List;
 
 @AllArgsConstructor
@@ -36,5 +37,22 @@ public class StudentService {
                     "Student with id " + studentId + " does not exists");
         }
         studentRepository.deleteById(studentId);
+    }
+
+    public void twoSum(int[] nums, int target) {
+
+        Arrays.sort(nums);
+        int[] results = new int[2];
+
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] >= target){
+                break;
+            }
+
+            if(nums[i] + nums[i+1] == target) {
+                results[0] = i;
+                results[1] = i+1;
+            }
+        }
     }
 }
